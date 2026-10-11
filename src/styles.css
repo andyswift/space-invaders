@@ -55,3 +55,9 @@ button:focus-visible { outline: 2px solid var(--red); outline-offset: 6px; }
 .foot { display: flex; align-items: center; gap: 16px; }
 .home { color: #8a93b8; font-size: 0.75rem; text-decoration: none; padding: 4px 8px; min-height: 0; }
 .home:hover { color: #fff; }
+
+/* On touch devices, keep the links well away from the thumb controls: move them to the top. */
+@media (pointer: coarse) {
+  .foot { order: -1; justify-content: space-between; width: min(100%, 480px); gap: 8px; }
+  .controls { margin-top: 12px; }
+}
